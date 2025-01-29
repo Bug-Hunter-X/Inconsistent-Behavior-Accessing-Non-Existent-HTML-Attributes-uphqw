@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Uncommon HTML Bug Solution</title>
+</head>
+<body>
+  <div id="myDiv">
+    This text is inside a div.
+  </div>
+
+  <script>
+    // Safer approach using optional chaining and nullish coalescing
+    let text = document.getElementById('myDiv')?.getAttribute('nonExistentAttribute') ?? '';
+    console.log(text); // Output: ''
+    
+    // Handling potential errors for innerText operation
+    let myDiv = document.getElementById('myDiv');
+    let innerText = '';
+    if (myDiv && myDiv.innerText) {
+        innerText = myDiv.innerText.toUpperCase();
+    } else {
+        console.log('Element or innerText is not available.');
+    }
+    console.log(innerText);
+  </script>
+</body>
+</html>
