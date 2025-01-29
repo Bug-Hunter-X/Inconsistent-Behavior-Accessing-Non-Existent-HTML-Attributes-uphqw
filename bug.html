@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Uncommon HTML Bug</title>
+</head>
+<body>
+  <div id="myDiv">
+    This text is inside a div.
+  </div>
+
+  <script>
+    // Attempting to access a non-existent attribute
+    let text = document.getElementById('myDiv').getAttribute('nonExistentAttribute');
+    console.log(text); // Output: null
+
+    //However, the following will throw an error in some browsers
+    let innerText = document.getElementById('myDiv').innerText.toUpperCase();
+    console.log(innerText);
+  </script>
+</body>
+</html>
